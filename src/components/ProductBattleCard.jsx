@@ -1,0 +1,3 @@
+export default function ProductBattleCard({ product }) {
+  return <article className="product card"><h3>{product.name}</h3><p className="demo">示範數據 Demo Data｜非即時報價</p><div className="grid">{[['產品代號',product.code],['相關資產',product.asset],['方向',product.direction==='call'?'認購':'認沽'],['行使價',product.strike],['到期日',product.expiry],['實際槓桿',product.leverage],['引伸波幅',product.iv],['街貨量',product.float],['買入價 / 賣出價',`${product.bid} / ${product.ask}`],['最後更新時間',product.updatedAt],['資料來源',product.source]].map(([k,v])=><p key={k}><strong>{k}</strong><span>{v}</span></p>)}</div><div className="actions"><button className="btn ghost">查看產品詳情</button><button className="btn ghost">上市文件連結</button></div><p className="fine">以上資料只作互動展示及產品特性說明，不構成投資建議。實際資料請以發行商網站及上市文件為準。</p></article>;
+}
